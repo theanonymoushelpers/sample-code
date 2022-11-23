@@ -1,1 +1,36 @@
+<!--Include this at the top of your math page in the <head> section in order to have the math functions appear fancy-->
 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!--You would also put your Desmos key in the same place. Please watch the video for instructions on how to do this,
+and contact me for the key to allow you to use Desmos.-->
+
+
+
+<!--Don't pay attention to anything outside this <p>, inside this p is an example of how you would write a math function.-->
+<p>`y=x+5`</p>
+
+<!--You can also write math functions in sentences, all you have to do is surround the function with `` 
+    (top left of most keyboards)-->
+<p>The function `y=x+5` is a linear function</p>
+
+
+<!--This is an example of how to use a Desmos graph in a page-->
+<!--Under where it says id, you can change this to 'calculator2' or 'calculator3' or any number
+to distinguish between multiple Desmos graphs on one page. Make sure you only use the number 
+once per page. You may use the same number on different articles, just not the same one.-->
+<div id="calculator1" style="width: 40%; height: 40%; margin: auto;"></div>
+
+<!--Then, right underneath the declaration above, paste this script in:-->
+<!--Where it says y=x^2+2x-8 is where you can paste your function to graph.
+Make sure to use the latex format, which you can find tutorials for online. It works
+in a similar way to typing in your computer's calculator.-->
+<script>
+    var elt = document.getElementById('calculator1');
+    var calculator = Desmos.GraphingCalculator(elt);
+    calculator.setExpression({ id: 'graph1', latex: 'y=x^2+2x-8' })
+</script>
+
+<!--Make sure the calculator's ID in this script matches the one in your div on the page, 
+otherwise the correct graph won't show up-->
